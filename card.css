@@ -1,0 +1,76 @@
+:root{
+    --card-green: #233C22;
+    --dark-green: #1A2F19;
+    --light-green: #9CE550;
+    --cream: #FAF8EE;
+}
+
+.card {
+    background-color: var(--card-green); 
+    color: var(--cream);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    /* max-width: 400px; */
+    border: 1px solid var(--cream);
+
+}
+.card h2 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.25rem;
+}
+.card p {
+    margin: 0 0 1rem 0;
+    font-size: 0.875rem;
+}
+.card hr {
+    border: none;
+    border-top: 1px solid #BAB6A2;
+    margin: 1rem 0;
+}
+.safe-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.safe-tag {
+    background-color: var(--light-green); /* Light green for the SAFE tag */
+    color: var(--dark-green); /* Darker green for contrast */
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+.more-options {
+    font-size: 0.875rem;
+    margin-bottom: 0 !important;
+    color: var(--light-green); 
+    margin-top: 1rem;
+}
+
+.review {
+    background-color: var(--card-green); /* Slightly lighter green for the card */
+    color: var(--cream);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    /* max-width: 300px; */
+    border: 1px solid var(--cream);
+
+}
+.review h2 {
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+.review .stars {
+    color: var(--light-green); /* Yellow color for stars */
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    /* margin: 0 0 0.5rem 0; */
+}
+.review p {
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
