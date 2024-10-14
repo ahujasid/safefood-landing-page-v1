@@ -16,10 +16,15 @@ function setupMarquee(elementId, direction) {
 
     const containerHeight = marquee.parentElement.offsetHeight;
     let currentPosition = direction === 'down' ? -totalHeight + containerHeight : 0;
-    const speed = 2; // Adjust this value to change the scrolling speed
+    const speed = 1; // Reduced speed for smoother animation
+    let lastTimestamp = 0;
 
-    function animate() {
-        currentPosition += speed * (direction === 'up' ? -1 : 1);
+    function animate(timestamp) {
+        if (!lastTimestamp) lastTimestamp = timestamp;
+        const deltaTime = timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+
+        currentPosition += speed * (direction === 'up' ? -1 : 1) * (deltaTime / 16.67); // 60 FPS normalization
         
         if (direction === 'up' && currentPosition <= -totalHeight) {
             currentPosition += totalHeight;
@@ -27,14 +32,14 @@ function setupMarquee(elementId, direction) {
             currentPosition -= totalHeight;
         }
 
-        marquee.style.transform = `translateY(${currentPosition}px)`;
+        marquee.style.transform = `translateY(${currentPosition.toFixed(2)}px)`;
         requestAnimationFrame(animate);
     }
 
     // Set initial position
     marquee.style.transform = `translateY(${currentPosition}px)`;
 
-    animate();
+    requestAnimationFrame(animate);
 }
 
 function initMarquees() {
