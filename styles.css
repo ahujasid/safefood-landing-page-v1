@@ -196,3 +196,66 @@ h2{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+@media (max-width: 768px){
+
+  h1{
+    font-size: 2.5rem;
+  }
+
+  h2{
+    font-size: 1.125rem;
+  }
+
+  .main-container{
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left{
+    width: 100%;
+    height: 60%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .right {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .marquee-column{
+    height: 100%;
+    width: 100%;
+    rotate: 0deg;
+  }
+
+  .marquee{
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .marquee-item {
+    flex: 0 0 auto;
+    height: 100%;
+    padding: 1rem;
+    position: relative;
+    width: auto;
+    
+  }
+  
+  .marquee-item img {
+    height: 100%;
+    width: auto;
+    display: block;
+  
+  }
+
+
+  #column-2{
+    display: none;
+  }
+
+}
