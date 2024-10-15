@@ -3,6 +3,22 @@
   --light-green: #9CE550;
   --cream: #FAF8EE;
   --card-green: #233C22;
+  --regular-text: 1.3125rem;
+  --large-text: 1.5rem;
+  --link-text: 2rem;
+  --xl-text: 4rem;
+  --small-text: 0.875rem;
+  --base-text: 1rem;  
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-16: 1rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
+  --container-padding: 6rem;
 }
 
 *, *::before, *::after {
@@ -25,11 +41,11 @@
 
 
 body {
-  line-height: 1.5;
+  line-height: 1.35;
   -webkit-font-smoothing: antialiased;
   background-color: var(--dark-green);
   color: var(--light-green);
-  font-size: 1.3125rem;
+  font-size: var(--regular-text);
   font-family: sf-sans, system-ui, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -62,16 +78,16 @@ h1{
   color: var(--cream);
   font-family: sf-serif, 'Times New Roman', serif;
   font-weight: 400;
-  font-size: 3.5rem; /*make this fluid */
+  font-size: var(--xl-text);
   line-height: 100%;
-  padding-bottom: 1.5rem;
-  padding-top: 1rem;
+  padding-bottom: var(--spacing-24);
+  padding-top: var(--spacing-16);
 }
 
 h2{
   font-weight: 400;
   line-height: 120%;
-  font-size: 1.5 rem;
+  font-size: var(--large-text);
 }
 
 .main-container{
@@ -81,7 +97,7 @@ h2{
   align-items: center;
   height: 100vh;
   width: 100vw;
-  padding: 6rem;
+  padding: var(--container-padding);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -109,15 +125,15 @@ a{
   font-family: sf-serif, 'Times New Roman', serif;
   text-decoration: none;
   color: var(--light-green);
-  font-size: 2rem;
+  font-size: var(--link-text);
 }
 
 .diet-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
+  gap: var(--spacing-16);
   width: 100%;
-  margin-bottom: 3rem;
+  margin-top: var(--spacing-32);
 }
 
 .diet-flex{
@@ -129,8 +145,8 @@ a{
 }
 
 .diet-icon{
-  height: 24px;
-  width: 24px;
+  height: var(--spacing-24);
+  width: var(--spacing-24);
   border: none;
 }
 
@@ -179,13 +195,13 @@ a{
 
 .marquee-item .tag{
   position: absolute;
-  left: 2rem;
-  bottom: 2rem;
+  left: var(--spacing-32);
+  bottom: var(--spacing-32);
   background-color: var(--light-green); 
   color: var(--dark-green); 
-  font-size: 0.875rem;
+  font-size: var(--small-text);
   font-weight: 700;
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing-4) var(--spacing-8);
   border-radius: 0.5rem;
 }
 
@@ -196,7 +212,7 @@ a{
   max-width: 100%;
   background-color: var(--card-green);
   /* border: 2px solid var(--cream); */
-  padding: 32px;
+  padding: var(--spacing-32);
   border-radius: 32px;
 
 }
@@ -204,7 +220,7 @@ a{
 .join-form h2{
   color: var(--cream);
   max-width: 400px;
-  font-size: 1.3125rem;
+  font-size: var(--regular-text);
 }
 
 
@@ -213,14 +229,14 @@ a{
   align-items: center;
   border-radius: 1rem;
   border: 2px solid var(--light-green);
-  padding: 8px;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  padding: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+  margin-top: var(--spacing-16);
 }
 
 .flag {
-  padding: 0 10px;
-  font-size: 1.5rem;
+  padding: 0 8px;
+  font-size: var(--large-text);
 }
 
 #phone {
@@ -228,8 +244,8 @@ a{
   background: transparent;
   border: none;
   color: var(--cream);
-  font-size: 1.3125rem;
-  padding: 10px;
+  font-size: var(--regular-text);
+  padding: 8px;
 }
 
 #phone::placeholder {
@@ -240,8 +256,8 @@ a{
   background-color: var(--light-green);
   border: none;
   border-radius: 8px;
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,28 +272,101 @@ a{
 
 .arrow, .checkmark {
   color: var(--dark-green);
-  font-size: 20px;
+  font-size: var(--regular-text);
 }
 
 .btn-spinner {
   border: 2px solid #1A2F19;
   border-top: 2px solid #9CE550;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   animation: spin 1s linear infinite;
 }
 
 
 .arrow {
   color: var(--dark-green);
-  font-size: 20px;
+  font-size: var(--regular-text);
 }
 
 .form-note {
-  font-size: 16px;
+  font-size: var(--base-text);
 }
 
+
+/* ------------------------------------------ CARDS ON THE RIGHT -------------------------------------------- */
+
+.card {
+  background-color: var(--card-green); 
+  color: var(--cream);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  /* max-width: 400px; */
+  border: 1px solid var(--cream);
+
+}
+.card h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+}
+.card p {
+  margin: 0 0 1rem 0;
+  font-size: var(--small-text);
+}
+.card hr {
+  border: none;
+  border-top: 1px solid #BAB6A2;
+  margin: 1rem 0;
+}
+.safe-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+
+.safe-tag {
+  background-color: var(--light-green); 
+  color: var(--dark-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+.more-options {
+  font-size: var(--small-text);
+  margin-bottom: 0 !important;
+  color: var(--light-green); 
+  margin-top: 1rem;
+}
+
+.review {
+  background-color: var(--card-green); 
+  color: var(--cream);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid var(--cream);
+
+}
+.review h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+.review .stars {
+  color: var(--light-green); 
+  font-size: var(--large-text);
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+.review p {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
 
 
 /* ------------------------------------------ ANIMATIONS -------------------------------------------- */
@@ -331,31 +420,91 @@ a{
 
 /* ------------------------------------------ RESPONSIVE -------------------------------------------- */
 
-@media (max-width: 1024px){
+@media (max-width: 1368px){
 
-  h1{
-    font-size: 2.5rem;
+  :root{
+    --regular-text: 1.1125rem;
+    --large-text: 1.3125rem;
+    --link-text: 1.5rem;
+    --xl-text: 3.5rem;
+    --small-text: 0.875rem;
+    --base-text: 0.875rem;  
+    --spacing-4: 0.25rem;
+    --spacing-8: 0.5rem;
+    --spacing-16: 1rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-40: 2.5rem;
+    --spacing-48: 3rem;
+    --spacing-56: 3.5rem;
+    --spacing-64: 4rem;
+    --container-padding: 4rem;
   }
 
-  h2{
-    font-size: 1.125rem;
+}
+
+
+
+@media (max-width: 1024px){
+
+  :root{
+    --regular-text: 1rem;
+    --large-text: 1.125rem;
+    --link-text: 1.3125rem;
+    --xl-text: 2.5rem;
+    --small-text: 0.75rem;
+    --base-text: 0.75rem;  
+    --spacing-4: 0.25rem;
+    --spacing-8: 0.5rem;
+    --spacing-16: 1rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-40: 2.5rem;
+    --spacing-48: 3rem;
+    --spacing-56: 3.5rem;
+    --spacing-64: 4rem;
+    --container-padding: 1rem;
   }
 
   .main-container{
     flex-direction: column;
-    padding: 1rem;
+    height: auto;
   }
 
   .left{
     width: 100%;
-    height: 60%;
+    height: auto;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: var(--spacing-64);
+    gap: var(--spacing-48);
+  }
+
+  .diet-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-16);
+    width: 100%;
+    margin-top: var(--spacing-32);
+  }
+  
+  .diet-flex{
+    display: flex;
+    align-items: center;
+    width: 120px; 
+    box-sizing: border-box;
+    gap: 4px;
+  }
+  
+  .diet-icon{
+    height: 21px;
+    width: 21px;
+    border: none;
   }
 
   .right {
     width: 100%;
-    height: 40%;
+    height: 560px;
     overflow: hidden;
     flex-direction: column;
   }
@@ -388,8 +537,59 @@ a{
   }
 
 
-  #column-2{
-    display: none;
+  .join-form {
+    max-width: 100%;
+    background-color: var(--card-green);
+    /* border: 2px solid var(--cream); */
+    padding: var(--spacing-24);
+    border-radius: 32px;
+  
   }
 
+  .input-container {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    border: 2px solid var(--light-green);
+    padding: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+    margin-top: var(--spacing-16);
+  } 
+  
+  .submit-btn {
+    background-color: var(--light-green);
+    border: none;
+    border-radius: 8px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+
+  .safe-item {
+    font-size: 1rem;
+  }
+  
+  
+  .review {
+    max-width: 200px;
+  }
+  .review h2 {
+    font-size: 1rem;
+  }
+  
+  .review p {
+    font-size: 1rem;
+  }
+
+ 
 }
