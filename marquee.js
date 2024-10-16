@@ -1,5 +1,5 @@
 function isMobile() {
-    return window.innerWidth <= 768; // Adjust this breakpoint as needed
+    return window.innerWidth <= 1024; // Adjust this breakpoint as needed
 }
 
 function setupMarquee(elementId, direction) {
