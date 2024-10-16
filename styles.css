@@ -506,9 +506,11 @@ a{
   }
   
   .marquee-item {
+    flex: 0 0 auto;
+    height: 100%;
     padding: 1rem;
+    position: relative;
     width: auto;
-    
   }
   
   .marquee-item img {
@@ -522,7 +524,6 @@ a{
     width: 100%;
   
   }
-
 
   .card h2 {
     font-size: 1rem;
