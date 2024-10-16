@@ -7,15 +7,9 @@ function setupMarquee(elementId, direction) {
     const items = marquee.querySelectorAll('.marquee-item');
     const isMobileDevice = isMobile();
     
-    // Calculate total width for mobile
-    const totalWidth = isMobileDevice
-        ? Array.from(items).reduce((sum, item) => sum + item.offsetWidth, 0)
-        : 0;
-    
-    // Calculate total height for desktop
-    const totalHeight = isMobileDevice
-        ? 0
-        : Array.from(items).reduce((sum, item) => sum + item.offsetHeight, 0);
+    // Calculate total width/height
+    const totalWidth = Array.from(items).reduce((sum, item) => sum + item.offsetWidth, 0);
+    const totalHeight = Array.from(items).reduce((sum, item) => sum + item.offsetHeight, 0);
 
     // Remove existing clones
     marquee.innerHTML = '';
@@ -68,13 +62,6 @@ function setupMarquee(elementId, direction) {
         requestAnimationFrame(animate);
     }
 
-    // Set initial position
-    if (isMobileDevice) {
-        marquee.style.transform = `translateX(${currentPosition}px)`;
-    } else {
-        marquee.style.transform = `translateY(${currentPosition}px)`;
-    }
-
     requestAnimationFrame(animate);
 }
 
@@ -88,5 +75,8 @@ function initMarquees() {
     }
 }
 
+// Only initialize once on load, remove resize listener
 window.addEventListener('load', initMarquees);
-window.addEventListener('resize', initMarquees);
+
+// Use passive event listener for scroll to improve performance
+window.addEventListener('scroll', () => {}, { passive: true });
